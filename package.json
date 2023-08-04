@@ -1,0 +1,26 @@
+{
+  "name": "angularjs-react-microfrontends",
+  "version": "0.1.0",
+  "description": "PoC of react components in an angularjs app",
+  "scripts": {
+    "start": "concurrently \"npm:dev --workspace=react-app\" \"npm:start --workspace=angularjs-app\"",
+    "build": "concurrently \"npm:build --workspace=react-app\" \"npm:build --workspace=angularjs-app\" && node index.mjs",
+    "serve-build": "cd dist && npx serve",
+    "build-angularjs": "npm run build --workspace=angularjs-app",
+    "build-react": "npm run build --workspace=react-app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "angularjs-app",
+    "react-app"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "dependencies": {
+    "merge-dirs": "^0.2.1",
+    "pm2": "^5.3.0"
+  }
+}

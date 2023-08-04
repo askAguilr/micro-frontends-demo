@@ -1,0 +1,17 @@
+<md-card md-theme="{{ showDarkTheme ? 'dark-grey' : 'default' }}" md-theme-watch>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">This is an AngularJS component</span>
+            <span class="md-subhead">The page will refresh on source changes</span>
+        </md-card-title-text>
+        <md-card-title-media>
+            <div class="md-media-lg card-media"><img src="https://source.unsplash.com/featured/300x203" alt=""/></div>
+        </md-card-title-media>
+    </md-card-title>
+    <react-component ng-component-id="image-card" ng-portal-id="image2"></react-component>
+    <md-card-actions layout="row" layout-align="end center">
+
+        <md-button>Action A</md-button>
+        <md-button>Action B</md-button>
+    </md-card-actions>
+</md-card>

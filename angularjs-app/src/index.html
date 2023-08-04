@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <title>AngularJS Material</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.2.4/angular-material.min.css">
+
+</head>
+<body>
+
+<md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="50" layout="row">
+        <react-component ng-component-id="clock-card" ng-portal-id="clock1"></react-component>
+    </div>
+    <div flex-xs flex-gt-xs="50" layout="column">
+        <react-component ng-component-id="image-card" ng-portal-id="image1"></react-component>
+        <hello-world></hello-world>
+    </div>
+</md-content>
+
+<script type="module">
+  import RefreshRuntime from "http://localhost:3001/@react-refresh"
+  if(RefreshRuntime){
+    RefreshRuntime.injectIntoGlobalHook(window)
+    window.$RefreshReg$ = () => {
+    }
+    window.$RefreshSig$ = () => (type) => type
+    window.__vite_plugin_react_preamble_installed__ = true
+  }
+</script>
+<script type="module" src="http://localhost:3001/src/main.tsx"></script>
+<script type="module" src="./my-lib.js"></script>
+<div id="root" style="visibility: hidden"></div>
+
+</body>
+</html>
